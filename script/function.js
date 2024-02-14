@@ -13,6 +13,11 @@ function setBackgroundColor(elementId){
     bgColor.classList.add('bg-orange-400')
 }
 
+function removeBackgroundColor(elementId){
+    const bgColor=document.getElementById(elementId);
+    bgColor.classList.remove('bg-orange-400')
+}
+
 function getAlphabetRandomNumber(){
     const alphabetRandom="abcdefghijklmnopqrstuvwxyz"
     const alpha=alphabetRandom.split('');
