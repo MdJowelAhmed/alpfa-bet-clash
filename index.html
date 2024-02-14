@@ -14,16 +14,82 @@
 
 <body>
     <main class="bg-[#010313] bg-[url('images/background.png')] min-h-screen bg-no-repeat bg-center">
-        <section class="flex flex-col justify-center min-h-screen">
-         <div class="text-center text-white ">
+        <!-- Home ground -->
+        <section id="home-screen" class="flex flex-col justify-center min-h-screen ">
+         <div class="text-center text-white">
             <h1 class="text-6xl text-whit poppins-black">Alpha clash pro</h1>
             <p class="text-xl mt-3">Alpha bet game play with us,We hope you succes this site</p>
          </div>
-         <div class="text-center mt-5">
+         <div onclick="play()" class="text-center mt-5">
             <button class="btn bg-white  text-black text-2xl font-bold">Play Now</button>
          </div>
         </section>
+
+        <!-- play ground  -->
+        <section id="play-ground" class="flex flex-col justify-center h-full items-center gap-5 hidden">
+            <!-- screen  -->
+            <div class=" mt-10">
+                
+                <div class="artboard artboard-horizontal phone-6 bg-[#FFFFFFB3] border-[20px] border-[#660313B3] rounded-2xl" ><p class="text-center text-2xl bg-black text-white w-1/3 rounded-b-lg m-auto">Dont seen to keyboard</p>
+               <div class="flex items-center justify-center h-full pb-4"> <p id="current-alphabet" class="text-9xl font-bold uppercase">Y</p></div></div>
+               <section class="flex justify-between w-3/4  items-center m-auto">
+                <button class="bg-gray-500 text-white text-xl font-medium px-3 rounded-lg">live <span>1</span></button>
+                <button class="bg-gray-500 text-white text-xl font-medium px-3 rounded-lg">Score: <span>1</span></button>
+               </section>
+            </div>
+            <!-- keyboard  -->
+            <div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>    
+                    <kbd id="w" class="kbd">w</kbd>    
+                    <kbd id="e" class="kbd">e</kbd>    
+                    <kbd id="r" class="kbd">r</kbd>    
+                    <kbd id="t" class="kbd">t</kbd>    
+                    <kbd id="y" class="kbd">y</kbd>    
+                    <kbd id="u" class="kbd">u</kbd>    
+                    <kbd id="i" class="kbd">i</kbd>    
+                    <kbd id="o" class="kbd">o</kbd>    
+                    <kbd id="p" class="kbd">p</kbd>    
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                  </div>
+            </div>
+            <!-- live score  -->
+        </section>
+
+        <!-- result ground  -->
+        <section class="flex text-white items-center justify-center h-screen hidden">
+            <div class="bg-[#FFFFFF33] p-7 rounded-2xl">
+                <h1 class="text-6xl font-bold">
+                    <p>Score: <span>14</span></p>
+
+                </h1>
+                <button class="btn bg-green-500 ml-12 my-6 text-center">Again play</button>
+                <p>Practise make a perfect man</p>
+            </div>
+        </section>
     </main>
+    <script src="script/function.js"></script>
+    <script src="script/alpha.js"></script>
 </body>
 
 </html>
