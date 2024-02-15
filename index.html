@@ -33,7 +33,7 @@
                 <div class="artboard artboard-horizontal phone-6 bg-[#FFFFFFB3] border-[20px] border-[#660313B3] rounded-2xl" ><p class="text-center text-2xl bg-black text-white w-1/3 rounded-b-lg m-auto">Dont seen to keyboard</p>
                <div class="flex items-center justify-center h-full pb-4"> <p id="current-alphabet" class="text-9xl font-bold uppercase">Y</p></div></div>
                <section class="flex justify-between w-3/4  items-center m-auto">
-                <button class="bg-gray-500 text-white text-xl font-medium px-3 rounded-lg">life <span>1</span></button>
+                <button class="bg-gray-500 text-white text-xl font-medium px-3 rounded-lg">life <span id="current-life" class="text-2xl">5</span></button>
                 <button class="bg-gray-500 text-white text-xl font-medium px-3 rounded-lg">Score: <span id="current-score" class="text-2xl">0</span></button>
                </section>
             </div>
@@ -77,13 +77,13 @@
         </section>
 
         <!-- result ground  -->
-        <section class="flex text-white items-center justify-center h-screen hidden">
+        <section id="final-score" class="flex text-white items-center justify-center h-screen hidden">
             <div class="bg-[#FFFFFF33] p-7 rounded-2xl">
                 <h1 class="text-6xl font-bold">
-                    <p>Score: <span>14</span></p>
+                    <p>Score: <span id="last-score">14</span></p>
 
                 </h1>
-                <button class="btn bg-green-500 ml-12 my-6 text-center">Again play</button>
+                <button onclick="play()" class="btn bg-green-500 ml-12 my-6 text-center">Again play</button>
                 <p>Practise make a perfect man</p>
             </div>
         </section>
