@@ -9,8 +9,11 @@
 //     console.log('Press keyboard any button')
 // }
 // document.addEventListener('keyup', handleKeyboardButtonPress)
-
+const audio=new Audio();
+let isGamePlayOn=false;
+let artBoard=document.getElementById('art-board');
 function handleKeyupPress(event){
+    if(isGamePlayOn===false) return;
     const playerPress=event.key;
     console.log('Player press',playerPress)
 
@@ -25,44 +28,44 @@ function handleKeyupPress(event){
 
     // check macth 
     if(currentAlphabet===playerPress){
+       
+        audio.src = "../audio/right.mp3";
+            audio.play();
         console.log('You win and get point 1');
 
         const currentScoreDisplay=elementTextId('current-score')
         console.log(currentScoreDisplay);
         const updateScore=currentScoreDisplay + 1;
-        setElementId('current-score',updateScore)
-        
-        // update score 
-        // const currentScoreElement=document.getElementById('current-score');
-        // const currentScoreInner=currentScoreElement.innerText;
-        // const currentScore=parseInt(currentScoreInner);
-        // console.log(currentScore);
+        setElementId('current-score',updateScore);
 
-        // const newScore=currentScore + 1;
+    
+        if(updateScore===5 ){
+            audio.src = "../audio/right2.mp3";
+            audio.play();
+        }
 
-        // currentScoreElement.innerText=newScore
 
         console.log(currentAlphabet);
         removeBackgroundColor(currentAlphabet);
         gameContinue()
     }
     else{
+        audio.src="../audio/wrong.mp3"
+        audio.play();
+       
         console.log('You wrong so you lost your point and try again mode successful by self')
         const currentLife=elementTextId('current-life');
         const updatedLife=currentLife - 1;
-        setElementId('current-life',updatedLife)
+        setElementId('current-life',updatedLife);
+        let updatedLifePercentage=(updatedLife/5)*100;
+        artBoard.style.background=`linear-gradient(#FFFFFF ${updatedLifePercentage}%,red)`
 
         if(updatedLife ===0){
             gameIsOver()
         }
 
 
-        // const currentLifeElement=document.getElementById('current-life');
-        // const currentLifeInner=currentLifeElement.innerText;
-        // const currentLife=parseInt(currentLifeInner);
-        // console.log(currentLife)
-        // const newLife=currentLife - 1;
-        // currentLifeElement.innerText = newLife;
+       
     }
 
 }
@@ -78,6 +81,7 @@ function gameContinue(){
 }
 
 function play(){
+  
     hideElementId('home-screen');
     showGetElement('play-ground');
     hideElementId('final-score');
@@ -85,6 +89,7 @@ function play(){
     setElementId('current-life',5);
     setElementId('current-score',0)
     gameContinue();
+    isGamePlayOn=true
 }
 
 function gameIsOver(){
@@ -97,4 +102,6 @@ function gameIsOver(){
 
     const currentAlphabet=getElementTextById('current-alphabet');
     removeBackgroundColor(currentAlphabet)
+    isGamePlayOn=false;
+    artBoard.style.background="linear-gradient(#FFFFFFA3 100%,red)"
 }
